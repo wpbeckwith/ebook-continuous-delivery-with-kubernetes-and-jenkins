@@ -1,7 +1,7 @@
 podTemplate(label: 'release', 
   containers: [
-    containerTemplate(name: 'kubectl', image: 'wpbeckwith/kubectl:1.7.0', ttyEnabled: true, command: 'cat'),
-    containerTemplate(name: 'maven', image: 'wpbeckwith/maven:3.5.0-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'kubectl', image: 'jorgeacetozi/kubectl:1.7.0', ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'maven', image: 'jorgeacetozi/maven:3.5.0-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true, command: 'cat')
   ],
   volumes: [
