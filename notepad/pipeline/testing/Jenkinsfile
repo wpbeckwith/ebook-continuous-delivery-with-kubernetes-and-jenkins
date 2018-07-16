@@ -1,4 +1,5 @@
 podTemplate(label: 'testing', 
+  serviceAccount: 'jenkins-master',
   containers: [
     containerTemplate(name: 'kubectl', image: 'jorgeacetozi/kubectl:1.7.0', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'mysql', image: 'mysql:5.7', envVars: [
@@ -24,7 +25,7 @@ podTemplate(label: 'testing',
 
     dir('app') {
       stage('Checkout the Notepad application') {
-        git url: 'https://github.com/jorgeacetozi/notepad.git', branch: "${GIT_BRANCH}"
+        git url: 'https://github.com/wpbeckwith/notepad.git', branch: "${GIT_BRANCH}"
       }
 
       stage('Run Unit/Integration Tests, generate the jar artifact and push it to Artifactory') {
