@@ -1,4 +1,5 @@
 podTemplate(label: 'continuous-integration',
+  serviceAccount: 'jenkins-master',
   containers: [
     containerTemplate(name: 'kubectl', image: 'jorgeacetozi/kubectl:1.7.0', ttyEnabled: true, command: 'cat')
   ])
