@@ -16,7 +16,7 @@ podTemplate(label: 'canary',
       envVar(key: 'DISPLAY', value: ':98.0'),
       envVar(key: 'SE_OPTS', value: '-port 5557'),
     ]),
-    containerTemplate(name: 'kubectl', image: 'wpbeckwith/kubectl:1.7.0', ttyEnabled: true, command: 'cat')
+    containerTemplate(name: 'kubectl', image: 'jorgeacetozi/kubectl:1.7.0', ttyEnabled: true, command: 'cat')
   ],
   envVars: [
     secretEnvVar(key: 'DOCKERHUB_USERNAME', secretName: 'dockerhub-username-secret', secretKey: 'USERNAME')
