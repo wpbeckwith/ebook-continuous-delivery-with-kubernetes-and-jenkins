@@ -35,6 +35,15 @@ podTemplate(label: 'acceptance',
             """
           }
         }
+      },
+      chrome: {
+        stage('Run Acceptance Tests on Chrome') {
+          container('maven-chrome') {
+            sh """
+              mvn -B -s /etc/maven/settings.xml clean verify -Pacceptance-tests -Dacceptance.notepad.url=${NOTEPAD_URL} -Dselenium.browser=chrome -Dsurefire.rerunFailingTestsCount=3
+            """
+          }
+        }
       }
     )
   }
